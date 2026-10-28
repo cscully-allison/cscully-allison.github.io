@@ -7,11 +7,13 @@
        windowHeight = window.innerHeight-75;
     });
 
-    let points:object[] = [];
+    type Point = { x: number; y: number };
+
+    let points: Point[] = [];
     let isDrawing = false;
-    let undoStack: object[] = [];
-    let redoStack: object[] = [];
-    let stack_buffer: object[] = [];
+    let undoStack: Point[][] = [];
+    let redoStack: Point[][] = [];
+    let stack_buffer: Point[] = [];
 
     function startDrawing(event: MouseEvent) {
         stack_buffer = [];
@@ -45,33 +47,34 @@
     
     function manageInput(event: KeyboardEvent) {
         if (event.key === 'z' && (event.ctrlKey || event.metaKey)) {
-            const lastAction = undoStack.length > 0 ? undoStack.pop() as object[] : null;
+            const lastAction = undoStack.pop() ?? null;
             if (lastAction) {
-                points = points.slice(0, points.length - (lastAction as object[]).length);
+                points = points.slice(0, points.length - lastAction.length);
                 redoStack.push(lastAction);
             }
-            console.log('Undo last point', undoStack);
         }
         if (
-        (event.key === 'y' && (event.ctrlKey || event.metaKey)) || 
+        (event.key === 'y' && (event.ctrlKey || event.metaKey)) ||
         (event.key === 'z' && (event.ctrlKey || event.metaKey) && event.shiftKey)
         ) {
-            const redoAction = redoStack.length > 0 ? redoStack.pop() as object[] : null;
+            const redoAction = redoStack.pop() ?? null;
             if (redoAction) {
-                points = [...points, ...(redoAction as object[])];
+                points = [...points, ...redoAction];
                 undoStack.push(redoAction);
             }
-            console.log('Redo last point', redoStack);
         }
     }
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
 <svg
     on:mousedown={startDrawing}
     on:mousemove={draw}
     on:mouseup={stopDrawing}
     on:mouseleave={leaveDrawing}
     on:keydown={manageInput}
+    role="application"
+    aria-label="Freehand drawing canvas"
     width="600"
     height={windowHeight}
     class="drawing-canvas"
