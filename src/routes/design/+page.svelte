@@ -1,5 +1,67 @@
 <script lang="ts">
 	import IllustrationPlaceholder from '$lib/components/IllustrationPlaceholder.svelte';
+	import TapedFigure from '$lib/components/TapedFigure.svelte';
+	import bubblegumHair from '$lib/assets/illustrations/Bubblegum_Hair.png';
+	import obsidianElemental from '$lib/assets/illustrations/obsidian_elemental.png';
+	import pinterestStudy from '$lib/assets/illustrations/pintrest_study.png';
+	import tenichoutal from '$lib/assets/illustrations/Tenichoutal.png';
+	import cactus from '$lib/assets/illustrations/cactus.png';
+	import goblin from '$lib/assets/illustrations/goblin.png';
+	import sc26 from '$lib/assets/stickers/sc/Sc26.png';
+	import sc25 from '$lib/assets/stickers/sc/SC25.png';
+	import sc25Gig from '$lib/assets/stickers/sc/SC25-gig.png';
+	import sc24 from '$lib/assets/stickers/sc/SC24.png';
+	import sc23 from '$lib/assets/stickers/sc/SC23.png';
+	import vis26 from '$lib/assets/stickers/vis/Vis26.png';
+	import vis25 from '$lib/assets/stickers/vis/VIS25.png';
+
+	const illustrations = [
+		{
+			src: bubblegumHair,
+			alt: 'Woman with pink bubblegum-bubble hair buns, a puffy blue jacket and a katana, in a misty forest'
+		},
+		{
+			src: obsidianElemental,
+			alt: 'Armored knight with a red cape and a long greatsword striding through shafts of light'
+		},
+		{
+			src: pinterestStudy,
+			alt: 'Portrait study of a woman with a voluminous white afro in a silver sequined dress'
+		},
+		{
+			src: tenichoutal,
+			alt: 'Orange axolotl-like cowboy in a brown hat crouching with a rifle between rocks'
+		},
+		{
+			src: cactus,
+			alt: 'Cactus person in a blue military coat holding a scroll, leaning on a lectern beside a stack of books'
+		},
+		{
+			src: goblin,
+			alt: 'Goblin thief in a huge striped hat reaching for a green gem labeled "do not touch"'
+		}
+	];
+
+	// Each row runs most recent → least recent, left to right.
+	const stickerSeries = [
+		{
+			label: 'SC',
+			stickers: [
+				{ src: sc26, caption: 'SC26', alt: 'SC26 conference sticker' },
+				{ src: sc25, caption: 'SC25', alt: 'SC25 conference sticker' },
+				{ src: sc25Gig, caption: 'SC25 · GIGs', alt: 'SC25 GIGs conference sticker' },
+				{ src: sc24, caption: 'SC24', alt: 'SC24 conference sticker' },
+				{ src: sc23, caption: 'SC23', alt: 'SC23 conference sticker' }
+			]
+		},
+		{
+			label: 'VIS',
+			stickers: [
+				{ src: vis26, caption: 'VIS26', alt: 'IEEE VIS 2026 conference sticker' },
+				{ src: vis25, caption: 'VIS25', alt: 'IEEE VIS 2025 conference sticker' }
+			]
+		}
+	];
 </script>
 
 <svelte:head>
@@ -90,9 +152,19 @@
 				below
 			</a>.
 		</p>
-		<div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-			{#each { length: 3 } as _, i}
-				<IllustrationPlaceholder label="Illustration {i + 1}" aspectRatio="3/4" />
+		<!-- Masonry columns so mixed portrait/landscape pieces show uncropped. -->
+		<div class="columns-1 gap-8 pt-2 sm:columns-2 md:columns-3">
+			{#each illustrations as illustration}
+				<div class="mb-8 break-inside-avoid">
+					<TapedFigure seed={illustration.src}>
+						<img
+							src={illustration.src}
+							alt={illustration.alt}
+							class="block w-full p-1.5"
+							loading="lazy"
+						/>
+					</TapedFigure>
+				</div>
 			{/each}
 		</div>
 	</div>
@@ -105,9 +177,31 @@
 		<p class="mb-10 font-sans text-base leading-relaxed text-fg">
 			Here is an archive of my personal conference sticker series.
 		</p>
-		<div class="grid grid-cols-3 gap-4 md:grid-cols-6">
-			{#each { length: 6 } as _, i}
-				<IllustrationPlaceholder label="Sticker {i + 1}" aspectRatio="1/1" />
+		<div class="flex flex-col gap-12">
+			{#each stickerSeries as series}
+				<div>
+					<h3
+						class="mb-6 font-serif text-2xl text-fg"
+						style="border-left: 3px solid var(--color-accent-3); padding-left: 0.75rem;"
+					>
+						{series.label}
+					</h3>
+					<ul class="grid grid-cols-3 gap-6 sm:grid-cols-5">
+						{#each series.stickers as sticker}
+							<li class="flex flex-col items-center gap-2">
+								<img
+									src={sticker.src}
+									alt={sticker.alt}
+									class="sticker aspect-square w-full object-contain"
+									loading="lazy"
+								/>
+								<span class="font-sans text-xs tracking-widest text-muted uppercase">
+									{sticker.caption}
+								</span>
+							</li>
+						{/each}
+					</ul>
+				</div>
 			{/each}
 		</div>
 	</div>
@@ -143,3 +237,32 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.sticker {
+		filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.15));
+		transition:
+			transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+			filter 300ms ease;
+	}
+
+	/* Alternate the hover wiggle direction so a row doesn't all lean the same way. */
+	li:nth-child(odd) .sticker:hover {
+		transform: rotate(-4deg) scale(1.05);
+		filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.2));
+	}
+
+	li:nth-child(even) .sticker:hover {
+		transform: rotate(4deg) scale(1.05);
+		filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.2));
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.sticker {
+			transition: none;
+		}
+		li .sticker:hover {
+			transform: none;
+		}
+	}
+</style>

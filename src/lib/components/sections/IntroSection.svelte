@@ -9,6 +9,14 @@
 	let bioEl: HTMLDivElement;
 	let rightColEl: HTMLDivElement;
 
+	// TODO: replace the placeholder '#' hrefs with real URLs.
+	const links = [
+		{ label: 'CV', href: '#' },
+		{ label: 'GitHub', href: 'https://github.com/cscully-allison' },
+		{ label: 'Bluesky', href: 'https://bsky.app/profile/cscullyallison.bsky.social' },
+		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/cscullyallison/' }
+	];
+
 	onMount(() => {
 		const tl = createTimeline();
 
@@ -88,6 +96,19 @@
 					has active users at three National Labs across the country: Lawrence Livermore National
 					Laboratory, National Laboratory of the Rockies, and Argonne National Laboratory.
 				</p>
+				<div class="flex flex-wrap items-center gap-3 pt-2">
+					{#each links as link}
+						<a
+							href={link.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="rounded-sm border border-accent px-2.5 py-1 font-sans text-xs font-medium text-accent transition-colors hover:border-accent-hover hover:text-accent-hover"
+						>
+							{link.label}
+						</a>
+					{/each}
+					<span class="font-mono text-xs text-muted">cscully [at] uchicago.edu</span>
+				</div>
 			</div>
 		</div>
 

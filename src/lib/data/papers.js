@@ -38,7 +38,7 @@ export const papers = [
 		venue: 'IEEE Transactions on Visualization and Computer Graphics',
 		abstract:
 			'Domain-specific visualizations sometimes focus on narrow, albeit important, tasks for one group of users. This focus limits the utility of a visualization to other groups working with the same data. We present Guidepost, a visualization tool designed to serve multiple stakeholder groups—scientists assessing compute wait times, machine learning researchers evaluating prediction accuracy, and system administrators examining usage patterns. Through a personas-based design methodology, we categorized tasks as either shared across groups (supported through interactive visualizations) or unique to individual personas (addressed via scripting capabilities). Real-world case studies and task-focused evaluation with nine participants demonstrated that Guidepost\'s visual encodings, interactions, and export capabilities support the tasks of our differing personas.',
-		image: 'paper_images/same_data.png',
+		image: '/paper_images/tale_of.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1109/TVCG.2026.3666137' }],
 		bibtex: `@article{scullyallison2026samedata,
   title   = {Same Data, Different Audiences: Using Personas to Scope a Supercomputing Job Queue Visualization},
@@ -64,7 +64,7 @@ export const papers = [
 		venue: 'arXiv preprint',
 		abstract:
 			'Data workers may have a different mental model of their data than the one reified in code. We examine how individuals conceptualize data organization through interviews and sketching exercises with a team performing complex performance data analysis. We found that team members working with identical data structures held divergent mental representations, resulting in parallel hazards limiting their ability to reason about the data. We propose design recommendations for improving data analysis tools and workflows based on these findings.',
-		image: null,
+		image: '/paper_images/tale_of_two.png',
 		links: [
 			{ label: 'arXiv', url: 'https://arxiv.org/abs/2501.09862' },
 			{ label: 'DOI', url: 'https://doi.org/10.48550/arXiv.2501.09862' }
@@ -87,7 +87,7 @@ export const papers = [
 		venue: 'IEEE Working Conference on Software Visualization (VISSOFT)',
 		abstract:
 			'Gantt charts are frequently used to explore execution traces of large-scale parallel programs. In these visualizations, each parallel processor is assigned a row showing the computation state of a processor at a particular time. Lines are drawn between rows to show communication between these processors. When drawn to align equivalent calls across rows, visual patterns can emerge reflecting communication behavior of the executing code. However, though these patterns have the same definition at any scale, they can be obscured by the density of rendered lines when displaying more than a few hundred processors. We seek to understand the effectiveness of various strategies for recognizing these patterns in Gantt charts. Specifically, we conduct a pre-registered user study comparing recognition of patterns when viewing all processors, a subset of processors, or a set of abstracted glyphs overlaid on the chart. We find that for simple patterns, the glyphs are more effective in general pattern recognition while the zoomed subsets provide nuance to specific characteristics, such as offsets, in patterns. These results suggest the development of a combined approach may be appropriate to enable pattern comprehension in large-scale Gantt charts.',
-		image: null,
+		image: '/paper_images/evalutating_communication.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1109/VISSOFT64034.2024.00011' }],
 		bibtex: `@inproceedings{scullyallison2024evaluating,
   title     = {Evaluating Communication Pattern Representations in Execution Trace Gantt Charts},
@@ -106,7 +106,7 @@ export const papers = [
 		venue: 'Practice and Experience in Advanced Research Computing (PEARC)',
 		abstract:
 			'We address a significant gap in HPC Operational Data Analytics by focusing on uncertainty quantification in predictive models. Only 1 out of 14 existing studies focused on job queue time prediction investigates the uncertainty aspect. We develop a methodology for establishing confidence bounds around queue time predictions from regression models and demonstrate that uncertainty analysis provides critical context for helping stakeholders interpret predictive insights accurately. While our current work targets queue time forecasting, our approach extends to predicting other operational metrics in high-performance computing environments.',
-		image: null,
+		image: '/paper_images/quantifying_uncertainty.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1145/3626203.3670627' }],
 		bibtex: `@inproceedings{menear2024quantifying,
   title     = {Quantifying Uncertainty in {HPC} Job Queue Time Predictions},
@@ -136,7 +136,7 @@ export const papers = [
 		venue: 'IEEE Transactions on Visualization and Computer Graphics',
 		abstract:
 			'We examine how to effectively combine interactive visualization with scripting capabilities in computational notebooks. Conducting a design study focused on calling context trees for performance analysis, we explored how to balance direct manipulation with programmatic querying. We performed task analysis to determine which interactions suit graphical versus scripting contexts, then developed and validated a notebook-embedded visualization prototype. Follow-up testing with multiple interaction modes revealed user support for the proposed design approach, yielding insights on merging visualization and scripting in notebook environments.',
-		image: null,
+		image: '/paper_images/design_concerns.png',
 		links: [
 			{ label: 'DOI', url: 'https://doi.org/10.1109/TVCG.2024.3354561' },
 			{ label: 'arXiv', url: 'https://arxiv.org/abs/2205.04557' }
@@ -172,7 +172,7 @@ export const papers = [
 		venue: 'ACM International Symposium on High-Performance Parallel and Distributed Computing (HPDC)',
 		abstract:
 			'Thicket is an open-source Python toolkit for Exploratory Data Analysis (EDA) of multi-run performance experiments. It facilitates analysis of optimal performance configurations for large-scale applications across multiple dimensions—platforms, measurement tools, and scales. The toolkit comprises three modular components: a data structure for multi-dimensional performance data built from call trees, metadata for dimension distinction and sub-selection, and a dimensionality reduction mechanism for statistical aggregation. It integrates extensible analysis capabilities including performance modeling and interactive visualization. We demonstrate effectiveness through case studies using the RAJA Performance Suite and a physics simulation across HPC and cloud environments.',
-		image: null,
+		image: '/paper_images/thicket.png',
 		links: [
 			{ label: 'DOI', url: 'https://doi.org/10.1145/3588195.3592989' },
 			{ label: 'PDF', url: 'https://dl.acm.org/doi/pdf/10.1145/3588195.3592989' }
@@ -205,7 +205,7 @@ export const papers = [
 		venue: 'SoftwareX',
 		abstract:
 			'[Abstract to be added.]',
-		image: null,
+		image: '/paper_images/vfirelib.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1016/j.softx.2023.101411' }],
 		bibtex: `@article{wu2023vfirelib,
   title   = {{vFirelib}: A {GPU}-Based Fire Simulation and Visualization Tool},
@@ -235,7 +235,7 @@ export const papers = [
 		venue: 'IEEE Transactions on Visualization and Computer Graphics',
 		abstract:
 			'Understanding the behavior of software in execution is a key step in identifying and fixing performance issues, particularly in high-performance computing. We describe Traveler, an interactive visualization platform designed to help performance analysts explore execution traces from task-parallel programs. Traveler provides multiple linked interfaces to help navigate trace data from multiple contexts and addresses challenges posed by large-scale, nanosecond-level event data across parallel processes. Testing revealed the platform supported analytical tasks and uncovered previously undetected behavior in a distributed array library.',
-		image: null,
+		image: '/paper_images/traveler.png',
 		links: [
 			{ label: 'DOI', url: 'https://doi.org/10.1109/TVCG.2022.3209375' },
 			{ label: 'PDF', url: 'https://arxiv.org/pdf/2208.00109' }
@@ -267,7 +267,7 @@ export const papers = [
 		venue: 'IEEE International Conference on e-Science',
 		abstract:
 			'We address complexity in analyzing performance data from large-scale HPC systems by extending Hatchet, a performance analysis library. We introduce a Call Path Query Language that leverages relational data in the performance analysis of scientific applications, enabling pattern matching for data reduction across call paths. Three case studies demonstrate the approach: examining sequential versus multi-threaded versions of Fido (revealing memory inefficiencies), analyzing MPI function performance in AMG2013 across different implementations, and showcasing interactive visualization capabilities that substantially reduce profiling datasets.',
-		image: null,
+		image: '/paper_images/enabling_call.png',
 		links: [
 			{ label: 'DOI', url: 'https://doi.org/10.1109/eScience55777.2022.00039' },
 			{
@@ -302,7 +302,7 @@ export const papers = [
 		venue: 'IEEE/ACM International Workshop on HPC User Support Tools (HUST)',
 		abstract:
 			'Performance analysis is critical for pinpointing bottlenecks in parallel applications. We describe enhancements to Hatchet, an open-source Python library for reading and analyzing profiling output from several tools. Key improvements include introducing a query mechanism for identifying call path patterns, adding visualization capabilities for interactive profile exploration, and developing analytical operations for handling multiple datasets. We also detail performance optimizations in Hatchet\'s HPCToolkit reader and the unify operation to enable scalable analysis of large datasets.',
-		image: null,
+		image: '/paper_images/usability_and.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1109/HUSTProtools51951.2020.00013' }],
 		bibtex: `@inproceedings{brink2020usability,
   title     = {Usability and Performance Improvements in Hatchet},
@@ -328,7 +328,7 @@ export const papers = [
 		venue: 'Procedia Computer Science (KES Conference)',
 		abstract:
 			'[Abstract to be added.]',
-		image: null,
+		image: '/paper_images/near_real_time.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1016/J.PROCS.2018.08.139' }],
 		bibtex: `@article{scullyallison2018nraqc,
   title   = {Near Real-time Autonomous Quality Control for Streaming Environmental Sensor Data},
