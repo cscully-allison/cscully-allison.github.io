@@ -7,8 +7,10 @@
 	<ul>
 		<li class:selected={$page.url.pathname === '/'}><a href="/">Home</a></li>
 		<li class:selected={$page.url.pathname.startsWith('/about')}><a href="/about">About</a></li>
-		<li class:selected={$page.url.pathname.startsWith('/projects')}><a href="/projects">Projects</a></li>
-		<li class:selected={$page.url.pathname.startsWith('/contact')}><a href="/contact">Contact</a></li>
+		<li class:selected={$page.url.pathname.startsWith('/design')}><a href="/design">About</a></li>
+		<li class:selected={$page.url.pathname.startsWith('/research')}><a href="/projects">Projects</a></li>
+		<li class:selected={$page.url.pathname.startsWith('/publications')}><a href="/publications">Projects</a></li>
+		<!-- <li class:selected={$page.url.pathname.startsWith('/contact')}><a href="/contact">Contact</a></li> -->
 	</ul>
 </nav>
 

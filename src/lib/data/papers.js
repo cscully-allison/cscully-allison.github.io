@@ -38,7 +38,7 @@ export const papers = [
 		venue: 'IEEE Transactions on Visualization and Computer Graphics',
 		abstract:
 			'Domain-specific visualizations sometimes focus on narrow, albeit important, tasks for one group of users. This focus limits the utility of a visualization to other groups working with the same data. We present Guidepost, a visualization tool designed to serve multiple stakeholder groups—scientists assessing compute wait times, machine learning researchers evaluating prediction accuracy, and system administrators examining usage patterns. Through a personas-based design methodology, we categorized tasks as either shared across groups (supported through interactive visualizations) or unique to individual personas (addressed via scripting capabilities). Real-world case studies and task-focused evaluation with nine participants demonstrated that Guidepost\'s visual encodings, interactions, and export capabilities support the tasks of our differing personas.',
-		image: null,
+		image: 'paper_images/same_data.png',
 		links: [{ label: 'DOI', url: 'https://doi.org/10.1109/TVCG.2026.3666137' }],
 		bibtex: `@article{scullyallison2026samedata,
   title   = {Same Data, Different Audiences: Using Personas to Scope a Supercomputing Job Queue Visualization},

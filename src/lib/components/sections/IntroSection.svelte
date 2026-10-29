@@ -78,7 +78,7 @@
 					I am a <strong>human-data interaction researcher</strong> operating at the intersection of
 					human centered computing, visualization, and high performance computing research. I design
 					and implement multimodal data interaction systems (combining visualization, code and AI) to
-					support complex, large-scale analytical workflows in real-world deployment scenarios.
+					support complex, federated analytical workflows used by data workers in real-world deployment scenarios.
 					<a
 						href="#research"
 						class="underline underline-offset-2 transition-colors text-accent hover:text-accent-hover"
