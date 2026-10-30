@@ -88,7 +88,7 @@
 					and implement multimodal data interaction systems (combining visualization, code and AI) to
 					support complex, federated analytical workflows used by data workers in real-world deployment scenarios.
 					<a
-						href="#research"
+						href="#software"
 						class="underline underline-offset-2 transition-colors text-accent hover:text-accent-hover"
 					>
 						My software

@@ -6,7 +6,7 @@
 	const visiblePapers = $derived(papers.filter((p) => !p.disabled));
 </script>
 
-<section id="papers" class="py-20">
+<section id="papers" class="bg-bg-subtle py-20">
 	<div class="mx-auto max-w-4xl px-6">
 		<h2 use:fadeInUp class="mb-2 font-serif text-3xl text-fg">Papers</h2>
 		<p use:fadeInUp={{ delay: 100 }} class="mb-10 font-sans text-sm text-muted">

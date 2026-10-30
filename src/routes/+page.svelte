@@ -1,6 +1,7 @@
 <script lang="ts">
 	import IntroSection from '$lib/components/sections/IntroSection.svelte';
 	import ResearchSection from '$lib/components/sections/ResearchSection.svelte';
+	import SoftwareSection from '$lib/components/sections/SoftwareSection.svelte';
 	import PapersSection from '$lib/components/sections/PapersSection.svelte';
 </script>
 
@@ -14,4 +15,5 @@
 
 <IntroSection />
 <ResearchSection />
+<SoftwareSection />
 <PapersSection />

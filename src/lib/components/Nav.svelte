@@ -25,6 +25,11 @@
 				</a>
 			</li>
 			<li>
+				<a href={anchor('software')} class="font-sans text-sm text-muted transition-colors hover:text-accent">
+					Software
+				</a>
+			</li>
+			<li>
 				<a href={anchor('papers')} class="font-sans text-sm text-muted transition-colors hover:text-accent">
 					Papers
 				</a>

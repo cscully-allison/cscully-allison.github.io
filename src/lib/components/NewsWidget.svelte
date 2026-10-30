@@ -9,11 +9,21 @@
 <aside>
 	<h3 class="mb-3 font-sans text-xs font-medium uppercase tracking-widest text-muted">News</h3>
 	<ul class="m-0 list-none space-y-4 p-0">
-		{#each news as item}
+		{#each news as item (item.date + item.text)}
 			<li class="border-l-2 border-border pl-3 text-sm">
 				<time class="mb-0.5 block font-mono text-xs text-muted">{formatDate(item.date)}</time>
 				{#if item.url}
-					<a href={item.url} class="text-fg transition-colors hover:text-accent">{item.text}</a>
+					<a
+						href={item.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group text-fg transition-colors hover:text-accent"
+					>
+						{item.text}<span
+							class="ml-0.5 inline-block text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+							aria-hidden="true">↗</span
+						>
+					</a>
 				{:else}
 					<span class="text-fg">{item.text}</span>
 				{/if}

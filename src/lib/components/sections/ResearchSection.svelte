@@ -40,15 +40,15 @@
 			imageAlt2: '',
 			placeholderLabel: ''
 		},
-		{
-			title: 'Qualifying Uncertainty and Error in Scientific Data With QA Software',
-			description: '',
-			image: null,
-			imageAlt: '',
-			image2: null,
-			imageAlt2: '',
-			placeholderLabel: 'Qualifying Uncertainty'
-		}
+		// {
+		// 	title: 'Qualifying Uncertainty and Error in Scientific Data With QA Software',
+		// 	description: '',
+		// 	image: null,
+		// 	imageAlt: '',
+		// 	image2: null,
+		// 	imageAlt2: '',
+		// 	placeholderLabel: 'Qualifying Uncertainty'
+		// }
 	];
 </script>
 
